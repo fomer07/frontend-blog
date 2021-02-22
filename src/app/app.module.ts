@@ -25,7 +25,9 @@ import {HttpClientModule} from "@angular/common/http";
     ReactiveFormsModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path:'register',component:RegisterComponent}
+      {path:'register',component:RegisterComponent},
+      {path:'login',component:LoginComponent},
+      {path:'register-success',component:RegisterSuccessComponent}
     ]),
     HttpClientModule
 

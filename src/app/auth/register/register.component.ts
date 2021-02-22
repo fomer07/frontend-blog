@@ -3,6 +3,7 @@ import {register} from "ts-node";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {RegisterDto} from "../register-dto";
 import {AuthService} from "../auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,7 @@ export class RegisterComponent implements OnInit {
   registerForm : FormGroup;
   registerDto : RegisterDto;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router:Router) {
    this.registerForm = this.formBuilder.group({
     username:'',
     email:'',
@@ -39,6 +40,7 @@ export class RegisterComponent implements OnInit {
    this.registerDto.confirmPassword= this.registerForm.get('confirmPassword').value;
    this.authService.register(this.registerDto).subscribe(data =>{
      console.log("register successful")
+     this.router.navigateByUrl('/register-success')
    },error => {
      console.log("register failed")
    });
