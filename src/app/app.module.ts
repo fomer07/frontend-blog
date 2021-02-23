@@ -10,6 +10,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AppRoutingModule} from "./app-routing.module";
 import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
+import {NgxWebstorageModule} from "ngx-webstorage";
+import { HomeComponent } from './home/home.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -17,17 +20,21 @@ import {HttpClientModule} from "@angular/common/http";
     HeaderComponent,
     RegisterComponent,
     LoginComponent,
-    RegisterSuccessComponent
+    RegisterSuccessComponent,
+    HomeComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    NgxWebstorageModule.forRoot(),
     RouterModule.forRoot([
       {path:'register',component:RegisterComponent},
       {path:'login',component:LoginComponent},
-      {path:'register-success',component:RegisterSuccessComponent}
+      {path:'register-success',component:RegisterSuccessComponent},
+      {path:'home',component:HomeComponent}
     ]),
     HttpClientModule
 
