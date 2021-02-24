@@ -1,4 +1,5 @@
 export class JwtAuthResponse{
-  authToken : string;
+  jwt : string;
   username : string;
+  id :bigint;
 }
