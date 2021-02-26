@@ -1,0 +1,10 @@
+.add-post-content{
+  padding-top: 20px;
+}
+.title{
+  color: indigo;
+}
+.post-content,.post-title{
+  font-size: larger;
+  color: darkblue;
+}
